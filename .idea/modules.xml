@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Calculator_LeetcodeExercises/Calculator_LeetcodeExercises.iml" filepath="$PROJECT_DIR$/Calculator_LeetcodeExercises/Calculator_LeetcodeExercises.iml" />
+      <module fileurl="file://$PROJECT_DIR$/KajsBiler/KajsBiler.iml" filepath="$PROJECT_DIR$/KajsBiler/KajsBiler.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Password_Generator/Password_Generator.iml" filepath="$PROJECT_DIR$/Password_Generator/Password_Generator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Projects.iml" filepath="$PROJECT_DIR$/Projects.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SQLite/SQLite.iml" filepath="$PROJECT_DIR$/SQLite/SQLite.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SolarSystem/SolarSystem.iml" filepath="$PROJECT_DIR$/SolarSystem/SolarSystem.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Threads/Threads.iml" filepath="$PROJECT_DIR$/Threads/Threads.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Unit Tests/Unit Tests.iml" filepath="$PROJECT_DIR$/Unit Tests/Unit Tests.iml" />
+    </modules>
+  </component>
+</project>
