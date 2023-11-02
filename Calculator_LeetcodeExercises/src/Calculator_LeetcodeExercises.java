@@ -550,6 +550,28 @@ public class Calculator_LeetcodeExercises {
         }
         return new int[0];
     }
+
+    public static int mostFrequentItemCount(int[] collection) {
+        if (collection == null || collection.length == 0) {
+            return 0;
+        }
+        int mostFrequentItem = collection[0];
+        int maxCount = 0;
+        for (int i = 0; i < collection.length; i++) {
+            int currentItem = collection[i];
+            int currentCount = 1;
+            for (int j = i + 1; j < collection.length; j++) {
+                if (currentItem == collection[j]){
+                    currentCount++;
+                }
+            }
+            if (currentCount > maxCount){
+                mostFrequentItem = currentItem;
+                maxCount = currentCount;
+            }
+        }
+        return maxCount;
+    }
 }
 
 
