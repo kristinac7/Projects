@@ -14,7 +14,7 @@ public class FibonacciRecurionExercise {
     }
 
     private static long fibonacci(int n) {
-        if (n <= 1) {
+        if (n <= 1) {  // base case
             return n;
         }
         if (storedNumbers[n] != 0) {

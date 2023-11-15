@@ -73,10 +73,17 @@ public class Calculator_LeetcodeExercises {
         int[] date = {10, 2, 2023};
         System.out.println(toDayOfYear(date));
 
-        */
+
 
         int[] nums = {1, 2, 3, 4, 1, 2, 3};
         System.out.println(solve(nums));
+
+
+
+        int[] numbers = {1, 2, 3};
+        System.out.println(sum3(numbers));
+
+*/
     }
 
 
@@ -247,18 +254,17 @@ public class Calculator_LeetcodeExercises {
     }
 
 
-   /* public String longestCommonPrefix(String[] strs) {
-        String prefix = "";
-        int count = 0; // count the number of characters in the prefix
-        for (int i = 0; i < strs.length; i++) { // loop through the array
-            if (strs[i].charAt(count) == strs[i + 1].charAt(count)) {  // if the character at the current index is equal to the character at the next index
-                prefix += strs[i].charAt(count); // add the character to prefix
-                count++;
-            }
-        }
-        return prefix;
-    }*/
-
+    /* public String longestCommonPrefix(String[] strs) {
+         String prefix = "";
+         int count = 0; // count the number of characters in the prefix
+         for (int i = 0; i < strs.length; i++) { // loop through the array
+             if (strs[i].charAt(count) == strs[i + 1].charAt(count)) {  // if the character at the current index is equal to the character at the next index
+                 prefix += strs[i].charAt(count); // add the character to prefix
+                 count++;
+             }
+         }
+         return prefix;
+     }*/
     // longest common prefix - Leetcode
     public String longestCommonPrefix(String[] strs) {
         if (strs.length == 0) {
@@ -358,7 +364,7 @@ public class Calculator_LeetcodeExercises {
     // XOR is a bitwise operator that returns 1 if both bits are different and 0 if both bits are the same. For example, 1 XOR 1 = 0 and 1 XOR 0 = 1.
 
 
-    /*CodeWars
+    /* CodeWars
     Complete the solution so that it returns true if the first argument(string) passed in ends with the 2nd argument
     (also a string).*/
     public static boolean solution(String str, String ending) {
@@ -377,6 +383,7 @@ public class Calculator_LeetcodeExercises {
         return true;
     }
 
+
     public static String even_or_odd(int number) {
         String result = "";
         if (number % 2 == 0) {
@@ -386,6 +393,7 @@ public class Calculator_LeetcodeExercises {
         }
         return result;
     }
+
 
     public static int[] digitize(long n) {
         int[] newArray = new int[Long.toString(n).length()];
@@ -402,6 +410,7 @@ public class Calculator_LeetcodeExercises {
 
         return newArray;
     }
+
 
     /*
         In this Kata, you will be given a string that has lowercase letters and numbers.
@@ -421,16 +430,19 @@ public class Calculator_LeetcodeExercises {
         return maxNumber;
     }
 
+
     // Reverse String
     public static String solution(String str) {
         return new StringBuilder(str).reverse().toString();
     }
+
 
     public static String findNeedle(Object[] haystack) {
         int result = Arrays.asList(haystack).indexOf("needle");
 
         return "found the needle at position " + result;
     }
+
 
     public static String abbrevName(String name) {
         char first = name.charAt(0);
@@ -443,6 +455,7 @@ public class Calculator_LeetcodeExercises {
         }
         return name.toUpperCase();
     }
+
 
     public static String fakeBinSolution1(String numberString) {
         StringBuilder result = new StringBuilder();
@@ -458,10 +471,12 @@ public class Calculator_LeetcodeExercises {
         return result.toString();
     }
 
+
     public static String fakeBinSolution2(String numberString) {
 
         return numberString.replaceAll("[1-4]", "0").replaceAll("[5-9]", "1");
     }
+
 
     public static int getCount(String str) {
         int numberOfVowels = 0;
@@ -536,6 +551,7 @@ public class Calculator_LeetcodeExercises {
         return newArray;
     }
 
+
     public int[] twoSumSolution2(int[] nums, int target) {
 
         HashMap<Integer, Integer> result = new HashMap<>();
@@ -551,6 +567,7 @@ public class Calculator_LeetcodeExercises {
         return new int[0];
     }
 
+
     public static int mostFrequentItemCount(int[] collection) {
         if (collection == null || collection.length == 0) {
             return 0;
@@ -561,19 +578,40 @@ public class Calculator_LeetcodeExercises {
             int currentItem = collection[i];
             int currentCount = 1;
             for (int j = i + 1; j < collection.length; j++) {
-                if (currentItem == collection[j]){
+                if (currentItem == collection[j]) {
                     currentCount++;
                 }
             }
-            if (currentCount > maxCount){
+            if (currentCount > maxCount) {
                 mostFrequentItem = currentItem;
                 maxCount = currentCount;
             }
         }
         return maxCount;
     }
-}
 
+
+    //    Given an array of ints length 3, return the sum of all the elements.
+    public static int sum3(int[] nums) {
+        int sum = 0;
+        for (int i = 0; i < nums.length; i++) {
+            sum += nums[i];
+        }
+        return sum;
+    }
+
+
+    // Example: mapBully({"a": "candy", "b": "dirt"}) → {"a": "", "b": "candy"}
+    public Map<String, String> mapBully(Map<String, String> map) {
+        if (map.containsKey("a")) {
+            String aValue = map.get("a");
+
+            map.put("b", aValue);
+            map.put("a", "");
+        }
+        return map;
+    }
+}
 
 
 
