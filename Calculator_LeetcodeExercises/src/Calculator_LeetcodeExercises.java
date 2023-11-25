@@ -591,7 +591,7 @@ public class Calculator_LeetcodeExercises {
     }
 
 
-    //    Given an array of ints length 3, return the sum of all the elements.
+    // Given an array of ints length 3, return the sum of all the elements.
     public static int sum3(int[] nums) {
         int sum = 0;
         for (int i = 0; i < nums.length; i++) {
@@ -602,7 +602,7 @@ public class Calculator_LeetcodeExercises {
 
 
     // Example: mapBully({"a": "candy", "b": "dirt"}) → {"a": "", "b": "candy"}
-    public Map<String, String> mapBully(Map<String, String> map) {
+    public static Map<String, String> mapBully(Map<String, String> map) {
         if (map.containsKey("a")) {
             String aValue = map.get("a");
 
@@ -610,6 +610,49 @@ public class Calculator_LeetcodeExercises {
             map.put("a", "");
         }
         return map;
+    }
+
+
+    // Example: topping1({"ice cream": "peanuts"}) → {"bread": "butter", "ice cream": "cherry"}
+    public Map<String, String> topping1(Map<String, String> map) {
+        if (map.containsKey("ice cream")) {
+            map.put("ice cream", "cherry");
+        }
+        map.put("bread", "butter");
+
+        return map;
+    }
+
+
+    // Example: word0(["a", "b", "a", "b"]) → {"a": 0, "b": 0}
+    public Map<String, Integer> word0(String[] strings) {
+        Map<String, Integer> result = new HashMap<>();
+
+        for (int i = 0; i < strings.length; i++) {
+            result.put(strings[i], 0);
+        }
+        return result;
+    }
+
+    // Example: wordLen(["a", "bb", "a", "bb"]) → {"bb": 2, "a": 1}
+    public Map<String, Integer> wordLen(String[] strings) {
+        Map<String, Integer> result = new HashMap<>();
+
+        for (String s : strings) {
+            result.put(s, s.length());
+        }
+        return result;
+    }
+
+
+    // Example: pairs(["code", "bug"]) → {"b": "g", "c": "e"}
+    public Map<String, String> pairs(String[] strings) {
+        Map<String, String> result = new HashMap<>();
+
+        for (String s : strings){
+            result.put(String.valueOf(s.charAt(0)), String.valueOf(s.charAt(s.length() - 1)));
+        }
+        return result;
     }
 }
 
