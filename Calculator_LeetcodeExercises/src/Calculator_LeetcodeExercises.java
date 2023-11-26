@@ -48,8 +48,8 @@ public class Calculator_LeetcodeExercises {
         System.out.println(solution("abc", "bc"));
 
 
-
         System.out.println(digitize(5));
+
 
         Object[] haystack = {"kadkd", "needle", "ldld"};
         System.out.println(findNeedle(haystack));
@@ -61,7 +61,6 @@ public class Calculator_LeetcodeExercises {
         System.out.println(fakeBinSolution2("2347863"));
 
 
-
         System.out.println(getCount("skdourjs"));
 
 
@@ -69,21 +68,24 @@ public class Calculator_LeetcodeExercises {
         System.out.println(findIt(nums));
 
 
-
         int[] date = {10, 2, 2023};
         System.out.println(toDayOfYear(date));
-
 
 
         int[] nums = {1, 2, 3, 4, 1, 2, 3};
         System.out.println(solve(nums));
 
 
-
         int[] numbers = {1, 2, 3};
         System.out.println(sum3(numbers));
 
-*/
+
+        String inputString = "hello";
+        Map<Character, Integer> result = Calculator_LeetcodeExercises.countCharacters(inputString);
+        System.out.println(result);
+
+     */
+
     }
 
 
@@ -649,8 +651,54 @@ public class Calculator_LeetcodeExercises {
     public Map<String, String> pairs(String[] strings) {
         Map<String, String> result = new HashMap<>();
 
-        for (String s : strings){
+        for (String s : strings) {
             result.put(String.valueOf(s.charAt(0)), String.valueOf(s.charAt(s.length() - 1)));
+        }
+        return result;
+    }
+
+
+    // Example: wordCount(["a", "b", "a", "c", "b"]) → {"a": 2, "b": 2, "c": 1}
+    public Map<String, Integer> wordCount(String[] strings) {
+        Map<String, Integer> result = new HashMap<>();
+
+        for (String s : strings) {
+            if (result.containsKey(s)) {
+                result.put(s, result.get(s) + 1);
+            } else {
+                result.put(s, 1);
+            }
+        }
+        return result;
+    }
+
+
+    // Example: "hello" -> {'h': 1, 'e': 1, 'l': 2, 'o': 1}
+    public static Map<Character, Integer> countCharacters(String str) {
+        Map<Character, Integer> charCount = new HashMap<>();
+
+        for (char c : str.toCharArray()) {
+            if (charCount.containsKey(c)) {
+                charCount.put(c, charCount.get(c) + 1);
+            } else {
+                charCount.put(c, 1);
+            }
+        }
+        return charCount;
+    }
+
+
+    // Example: firstChar(["salt", "tea", "soda", "toast"]) → {"s": "saltsoda", "t": "teatoast"}
+    public Map<String, String> firstChar(String[] strings) {
+        Map<String, String> result = new HashMap<>();
+
+        for (String s : strings) {
+            String firstChar = String.valueOf(s.charAt(0));
+            if (result.containsKey(firstChar)) {
+                result.put(firstChar, result.get(firstChar) + s);
+            } else {
+                result.put(firstChar, s);
+            }
         }
         return result;
     }
