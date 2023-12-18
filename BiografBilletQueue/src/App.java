@@ -23,17 +23,11 @@ public class App {
         biograf.betjenKunde(kunde2);
         biograf.betjenKunde(kunde3);
 
-        biograf.billetSalg();
-        biograf.billetSalg();
-        biograf.billetSalg();
-        biograf.billetSalg();
+        biograf.billetSalg(forestilling1);
+        biograf.billetSalg(forestilling1);
+        biograf.billetSalg(forestilling2);
+        biograf.billetSalg(forestilling1);
 
         System.out.println("Antal billetter solgt: " + forestilling1.getAntalBilletterSolgt());
-
-
-
-
     }
-
-
 }

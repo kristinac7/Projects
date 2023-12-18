@@ -12,10 +12,10 @@ public class Forestilling {
         this.antalLedigePladser = antalLedigePladser;
     }
 
-    public boolean sælgBilleter(Forestilling forestilling){
-        if (forestilling.getAntalLedigePladser() > 0){
-            forestilling.antalLedigePladser--;
-            forestilling.antalBilletterSolgt++;
+    public boolean sælgBilleter(){
+        if (getAntalLedigePladser() > 0){
+            antalLedigePladser--;
+            antalBilletterSolgt++;
         } else {
             System.out.println("Der er ikke flere ledige pladser");
             return false;
