@@ -86,6 +86,8 @@ public class Calculator_LeetcodeExercises {
 
      */
 
+        System.out.println(isValid("({{{{}}}))"));
+
     }
 
 
@@ -689,7 +691,7 @@ public class Calculator_LeetcodeExercises {
 
 
     // Example: firstChar(["salt", "tea", "soda", "toast"]) → {"s": "saltsoda", "t": "teatoast"}
-    public Map<String, String> firstChar(String[] strings) {
+    public static Map<String, String> firstChar(String[] strings) {
         Map<String, String> result = new HashMap<>();
 
         for (String s : strings) {
@@ -701,6 +703,26 @@ public class Calculator_LeetcodeExercises {
             }
         }
         return result;
+    }
+
+
+    public static boolean isValid(String s) {
+        Stack<Character> karakterer = new Stack<>();
+
+        for (char c : s.toCharArray()) {
+            if (c == '(' || c == '[' || c == '{') {
+                karakterer.push(c);
+            } else if (c == ')' || c == ']' || c == '}') {
+                if (karakterer.isEmpty()) {
+                    return false;
+                }
+                    char top = karakterer.pop();
+                    if ((c == ')' && top != '(') || (c == ']' && top != '[') || (c == '}' && top != '{')) {
+                        return false;
+                    }
+                }
+            }
+        return karakterer.isEmpty();
     }
 }
 
