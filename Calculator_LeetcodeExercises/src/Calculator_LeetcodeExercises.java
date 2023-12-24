@@ -206,7 +206,7 @@ public class Calculator_LeetcodeExercises {
 
 
     // reverse string - Leetcode
-    public class ListNode {
+   /* public class ListNode {
         int val; // value of the node
         ListNode next; // pointer to the next node
 
@@ -221,7 +221,7 @@ public class Calculator_LeetcodeExercises {
             this.val = val;
             this.next = next;
         }
-    }
+    }*/
 
     class Leetcode {
         public ListNode middleNode(ListNode head) {
@@ -716,13 +716,56 @@ public class Calculator_LeetcodeExercises {
                 if (karakterer.isEmpty()) {
                     return false;
                 }
-                    char top = karakterer.pop();
-                    if ((c == ')' && top != '(') || (c == ']' && top != '[') || (c == '}' && top != '{')) {
-                        return false;
-                    }
+                char top = karakterer.pop();
+                if ((c == ')' && top != '(') || (c == ']' && top != '[') || (c == '}' && top != '{')) {
+                    return false;
                 }
             }
+        }
         return karakterer.isEmpty();
+    }
+
+
+    public static void merge(int[] nums1, int m, int[] nums2, int n) {
+
+
+    }
+
+
+    // Reverse LinkedList
+    public class ListNode {
+        int val;
+        ListNode next;
+
+        ListNode() {
+        }
+
+        ListNode(int val) {
+            this.val = val;
+        }
+
+        ListNode(int val, ListNode next) {
+            this.val = val;
+            this.next = next;
+        }
+    }
+
+    class Solution {
+        public ListNode reverseList(ListNode head) {
+            ListNode current = head;
+            ListNode previous = null;
+            ListNode next;
+
+            while (current != null) {
+                next = current.next;
+                current.next = previous;
+                previous = current;
+                current = next;
+            }
+            head = previous;
+
+            return head;
+        }
     }
 }
 
