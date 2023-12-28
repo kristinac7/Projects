@@ -4,6 +4,7 @@ public class RecursionExercises {
 
 
         System.out.println(count7(7177));
+        System.out.println(isPowerOfTwo(16));
 
     }
 
@@ -21,6 +22,20 @@ public class RecursionExercises {
                 return 1 + count7(n / 10);
         }
         return 0 + count7(n / 10);
+    }
+
+
+    // Given an integer n, return true if it is a power of two. Otherwise, return false.
+    public static boolean isPowerOfTwo(int n) {        // O(log n)
+        if (n == 1){
+            return true;
+        }
+        if (n % 2 != 0 || n <= 0) {
+            return false;
+        } else {
+            
+         return isPowerOfTwo(n / 2);
+        }
     }
 }
 
