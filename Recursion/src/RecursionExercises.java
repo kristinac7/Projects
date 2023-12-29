@@ -5,6 +5,7 @@ public class RecursionExercises {
 
         System.out.println(count7(7177));
         System.out.println(isPowerOfTwo(16));
+        System.out.println(isPowerOfThree(27));
 
     }
 
@@ -35,6 +36,19 @@ public class RecursionExercises {
         } else {
             
          return isPowerOfTwo(n / 2);
+        }
+    }
+
+
+    // Given an integer n, return true if it is a power of three. Otherwise, return false.
+    public static boolean isPowerOfThree(int n) {
+        if (n == 1){
+            return true;
+        }
+        if (n <= 0 || n % 3 != 0){
+            return false;
+        } else {
+            return isPowerOfThree(n / 3);
         }
     }
 }
