@@ -142,13 +142,13 @@ public class Calculator_LeetcodeExercises {
 
     // running sum of 1d array - Leetcode
     public int[] runningSum(int[] nums) {
-        int[] result = new int[nums.length]; // create a new array with the same length as nums
-        int sum = 0; // sum of the array
-        for (int i = 0; i < nums.length; i++) { // loop through the array
-            sum += nums[i]; // add the value of the current index to sum
-            result[i] = sum; // set the value of the current index to sum
+        int[] result = new int[nums.length];
+        int sum = 0;
+        for (int i = 0; i < nums.length; i++) {
+            sum += nums[i];
+            result[i] = sum;
         }
-        return result; // return the array
+        return result;
     }
 
 
@@ -192,7 +192,7 @@ public class Calculator_LeetcodeExercises {
     // number of steps to reduce a number to zero - Leetcode
     public int numberOfSteps(int num) {
         int steps = 0;
-        while (num != 0) { // while num is not 0
+        while (num != 0) {
             if (num % 2 == 0) { // if num is even
                 steps++;
                 num = num / 2; // divide num by 2
@@ -769,7 +769,7 @@ public class Calculator_LeetcodeExercises {
     }
 
 
-    //    Given a string s, find the first non-repeating character in it and return its index. If it does not exist, return -1.
+    // Given a string s, find the first non-repeating character in it and return its index. If it does not exist, return -1.
     public int firstUniqCharSolution1(String s) {
 
         HashMap<Character, Integer> map = new HashMap<>();
@@ -796,6 +796,48 @@ public class Calculator_LeetcodeExercises {
             }
         }
         return index;
+    }
+
+
+    // Given an array nums of size n, return the majority element.
+    // The majority element is the element that appears more than ⌊n / 2⌋ times. You may assume that the majority element always exists in the array.
+    public int majorityElement(int[] nums) {
+        int result = 0;
+
+        int halfNums = nums.length / 2;
+
+        HashMap<Integer, Integer> map = new HashMap<>();
+
+        for (int n : nums) {
+            map.put(n, map.getOrDefault(n, 0) + 1);
+            if (map.get(n) > halfNums) {
+                result = n;
+            }
+        }
+        return result;
+    }
+
+
+    public boolean containsDuplicate(int[] nums) {
+        HashMap<Integer, Integer> map = new HashMap<>();
+
+        for (int n : nums) {
+            map.put(n, map.getOrDefault(n, 0) + 1);
+            if (map.get(n) >= 2) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean containsDuplicateSolution2(int[] nums) {
+        HashSet<Integer> seen = new HashSet<>();
+        for (int num : nums) {
+            if (seen.contains(num))
+                return true;
+            seen.add(num);
+        }
+        return false;
     }
 }
 
